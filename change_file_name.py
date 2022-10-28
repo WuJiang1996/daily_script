@@ -27,8 +27,8 @@ import time
 from datetime import datetime
 # print(datetime.now().strftime('%Y%m%d%H%M%S'))
 
-directory_name = 'MP4/'
-output_name = 'MP4/'
+directory_name = 'mp4/'
+output_name = 'mp4/'
 
 def renameall():
     fileList = os.listdir(directory_name)       #待修改文件夹

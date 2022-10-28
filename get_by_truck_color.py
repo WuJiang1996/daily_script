@@ -4,7 +4,7 @@ import shutil
 
 #此为truck的颜色分类数据处理脚本
 
-directory_name = 'groups-truck/'
+directory_name = 'group-car/'
 
 for filename in os.listdir(directory_name):
     if "已完成" in filename:

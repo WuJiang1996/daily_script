@@ -6,7 +6,7 @@ import os
 #cap = cv2.VideoCapture("1.mp4")
 #cv2.VideoCapture(0, cv2.CAP_DSHOW) # 摄像头截取
 
-directory_name = 'MP4/'
+directory_name = 'mp4/'
 #size = []
 j = 12
 
@@ -26,7 +26,7 @@ for filename in os.listdir(directory_name):
     height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)) # h
     print('帧数、宽度、高度分别为:',fps,width,height) # 帧率 宽 高
     i = 0 # 记录读取多少帧
-    frameFrequency = 25 # 每frameFrequency保存一张图片
+    frameFrequency = 50 # 每frameFrequency保存一张图片
     #j = 1
     while(isOpened):
         # 结束标志是否读取到最后一帧
@@ -35,13 +35,13 @@ for filename in os.listdir(directory_name):
         else:
             i = i+1
         (flag,frame) = cap.read() # read方法 读取每一张 flag是否读取成功 frame 读取内容
-        fileName = 'car_'+ str(j) + '_' + str(filename.split('.')[0]) + '_' + str(i)+'.jpg' # 名字累加
+        fileName = str(filename.split('.')[0]) + str(i)+'.jpg' # 名字累加
         # True表示读取成功 进行·写入
         # if 判断需要有冒号
         #if flag == True:
         outPutDirName = './car/' # 设置保存路径
+        # 如果文件目录不存在则创建目录 
         if not os.path.exists(outPutDirName):
-            # 如果文件目录不存在则创建目录  
             os.makedirs(outPutDirName)
         if i % frameFrequency == 0:
             print(fileName)
@@ -52,4 +52,4 @@ for filename in os.listdir(directory_name):
 
     j += 1
     cap.release()
-    os.remove(video_path)
+    # os.remove(video_path)
