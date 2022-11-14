@@ -2,21 +2,16 @@
 # 1 load 2 info 3 parse 4 imshow imwrite
 import cv2
 import os
-# 获取一个视频打开cap 参数1 file name
-#cap = cv2.VideoCapture("1.mp4")
-#cv2.VideoCapture(0, cv2.CAP_DSHOW) # 摄像头截取
 
 directory_name = 'mp4/'
-#size = []
-j = 12
 
 for filename in os.listdir(directory_name):
     print('filename:', filename)
     video_path = directory_name + filename
-
     cap = cv2.VideoCapture(video_path)
     isOpened = cap.isOpened # 判断是否打开
     print(isOpened)
+
     # 获取信息 宽高
     n_frame = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     print('总帧数:',n_frame) # 整个视频的总帧数
@@ -25,9 +20,9 @@ for filename in os.listdir(directory_name):
     #print('w:',width)
     height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)) # h
     print('帧数、宽度、高度分别为:',fps,width,height) # 帧率 宽 高
+    
     i = 0 # 记录读取多少帧
     frameFrequency = 100 # 每frameFrequency保存一张图片
-    #j = 1
     while(isOpened):
         # 结束标志是否读取到最后一帧
         if i == n_frame:
@@ -49,8 +44,6 @@ for filename in os.listdir(directory_name):
                 cv2.imwrite(outPutDirName+fileName,frame,[cv2.IMWRITE_JPEG_QUALITY,100])# 质量控制 100最高
             except:
                 print("save photo failed!")
-
-    j += 1
     cap.release()
     # os.remove(video_path)
 
