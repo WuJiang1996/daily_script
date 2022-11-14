@@ -115,6 +115,7 @@ from functools import reduce
 # print ("7 - c 的值为：", c)
 
 # L = [0, 1, 3, 4, 5,7]
+
 # L.sort()
 # l_len = len(L)
 # n = (l_len - 1) // 2 #向下取整
