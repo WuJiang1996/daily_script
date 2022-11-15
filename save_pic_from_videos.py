@@ -1,3 +1,4 @@
+
 # 视频分解为单帧照片并保存到指定文件夹
 # 1 load 2 info 3 parse 4 imshow imwrite
 import cv2
@@ -20,7 +21,7 @@ for filename in os.listdir(directory_name):
     #print('w:',width)
     height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)) # h
     print('帧数、宽度、高度分别为:',fps,width,height) # 帧率 宽 高
-    
+
     i = 0 # 记录读取多少帧
     frameFrequency = 100 # 每frameFrequency保存一张图片
     while(isOpened):
