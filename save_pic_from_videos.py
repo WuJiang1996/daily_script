@@ -1,4 +1,3 @@
-
 # 视频分解为单帧照片并保存到指定文件夹
 # 1 load 2 info 3 parse 4 imshow imwrite
 import cv2
