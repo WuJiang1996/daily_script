@@ -1,10 +1,10 @@
 """爬虫相关配置"""
 
 # 关键词, 改为你想输入的词即可, 相当于在百度图片里搜索一样
-keyword = '油罐车'
+keyword = '大货车'
 
 # 最大下载数量
-max_download_images = 5000
+max_download_images = 10000
 
 # 精简一下网址，去掉网址中无意义的参数
 url_init_first = 'https://image.baidu.com/search/flip?tn=baiduimage&word='

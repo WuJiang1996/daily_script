@@ -42,7 +42,7 @@ def down_pic(pic_urls: List[str], max_download_images: int) -> None:
     for i, pic_url in enumerate(pic_urls):
         try:
             pic = requests.get(pic_url, timeout=15)
-            image_output_path = './crawl_images/' + 'ygc_' + str(i + 1) + '.jpg'
+            image_output_path = './truck3/' + 'truck3_' + str(i + 1) + '.jpg'
             with open(image_output_path, 'wb') as f:
                 f.write(pic.content)
                 print('成功下载第%s张图片: %s' % (str(i + 1), str(pic_url)))
@@ -59,8 +59,8 @@ if __name__ == '__main__':
     all_pic_urls.extend(page_urls)
 
     page_count = 0  # 累计翻页数
-    if not os.path.exists('./crawl_images'):
-        os.mkdir('./crawl_images')
+    if not os.path.exists('./truck3'):
+        os.mkdir('./truck3')
 
     # 获取图片链接
     while True:

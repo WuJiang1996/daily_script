@@ -3,7 +3,7 @@
 import cv2
 import os
 
-directory_name = 'mp4/'
+directory_name = '2023-02-13-外出采集/'
 
 for filename in os.listdir(directory_name):
     print('filename:', filename)
@@ -22,7 +22,7 @@ for filename in os.listdir(directory_name):
     print('帧数、宽度、高度分别为:',fps,width,height) # 帧率 宽 高
 
     i = 0 # 记录读取多少帧
-    frameFrequency = 100 # 每frameFrequency保存一张图片
+    frameFrequency = 10 # 每frameFrequency保存一张图片
     while(isOpened):
         # 结束标志是否读取到最后一帧
         if i == n_frame:
@@ -30,11 +30,11 @@ for filename in os.listdir(directory_name):
         else:
             i = i+1
         (flag,frame) = cap.read() # read方法 读取每一张 flag是否读取成功 frame 读取内容
-        fileName = str(filename.split('_')[2].split('.')[0]) + '_' + str(i)+'.jpg' # 名字累加
+        fileName = str(filename.split('.')[0]) + '_' + str(i)+'.jpg' # 名字累加
         # True表示读取成功 进行·写入
         # if 判断需要有冒号
         #if flag == True:
-        outPutDirName = './car1/' # 设置保存路径
+        outPutDirName = './car/' # 设置保存路径
         # 如果文件目录不存在则创建目录 
         if not os.path.exists(outPutDirName):
             os.makedirs(outPutDirName)
