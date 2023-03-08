@@ -1,4 +1,4 @@
-##把一个文件下面部分数据（随机选取）移动到另一个文件夹下面
+#把一个文件下面部分数据（随机选取）移动到另一个文件夹下面
 # import os, random, shutil
 # def moveFile(fileDir):
 #         pathDir = os.listdir(fileDir)    #取图片的原始路径
@@ -12,27 +12,38 @@
 #         return
 
 # if __name__ == '__main__':
-# 	fileDir = "./car2/"    #源图片文件夹路径
-# 	tarDir = './car4/'    #移动到新的文件夹路径
+# 	fileDir = "./car_type_axel_20230306_exp/labels/"    #源图片文件夹路径
+# 	tarDir = './labels/'    #移动到新的文件夹路径
 # 	moveFile(fileDir)
 
 
 import os, random, shutil
-img_list = []
+# img_list = []
 
-def moveFile(label_dir):
-        for imgname in os.listdir(label_dir):    #取图片的原始路径
-            imgname = imgname.split('.')[0] + '.jpg'
-            img_list.append(imgname)
+img_dir = './images/'
+for i in os.listdir(img_dir):
+    # img_list.append(i)
+    i = i.split('.')[0] + '.txt'
+    print(i)
+    lable_path = './car_type_axel_20230306_exp/labels/' + i
+    new_path = './labels/'  + i
+    shutil.move(lable_path, new_path)
+
+
+
+# def moveFile(label_dir):
+#         for imgname in os.listdir(label_dir):    #取图片的原始路径
+#             imgname = imgname.split('.')[0] + '.jpg'
+#             img_list.append(imgname)
     
-        for name in img_list:
-                shutil.move(fileDir+name, tarDir+name)
-        return
+#         for name in img_list:
+#                 shutil.move(fileDir+name, tarDir+name)
+#         return
 
-if __name__ == '__main__':
-    label_dir = './labels/'
-    fileDir = "./car2/"    #原图片文件夹路径
-    tarDir = './newer/'    #移动到新的文件夹路径
-    if not os.path.exists(tarDir):
-        os.makedirs(tarDir)
-    moveFile(label_dir)
+# if __name__ == '__main__':
+#     label_dir = './labels/'
+#     fileDir = "./car2/"    #原图片文件夹路径
+#     tarDir = './newer/'    #移动到新的文件夹路径
+#     if not os.path.exists(tarDir):
+#         os.makedirs(tarDir)
+#     moveFile(label_dir)
