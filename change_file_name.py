@@ -27,8 +27,8 @@ import time
 from datetime import datetime
 # print(datetime.now().strftime('%Y%m%d%H%M%S'))
 
-directory_name = 'mp4/'
-output_name = 'mp4/'
+directory_name = '20230526/'
+output_name = '20230526/'
 
 def renameall():
     fileList = os.listdir(directory_name)       #待修改文件夹
@@ -39,6 +39,8 @@ def renameall():
     for fileName in fileList:       #遍历文件夹中所有文件
         pat=".+\.(mp4)"      #匹配文件名正则表达式
         pattern = re.findall(pat,fileName)      #进行匹配
+        # print('pattern:',pattern)
+        # print('pattern[0]:',pattern[0])
         # os.rename(fileName,(str(num)+'.'+pattern[0]))       #文件重新命名
         os.rename(fileName,(datetime.now().strftime('%Y%m%d%H%M%S')+ str(num) + '.'+pattern[0]))       #文件重新命名
         num = num+1     #改变编号，继续下一项

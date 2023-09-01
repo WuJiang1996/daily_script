@@ -16,7 +16,6 @@
 # 	tarDir = './car4/'    #移动到新的文件夹路径
 # 	moveFile(fileDir)
 
-
 import os, random, shutil
 img_list = []
 label_list = []
@@ -35,21 +34,22 @@ def moveFile(label_dir):
                     # print(label_path)
                     label_list.append(label_path)
 
-    
         for name in img_list:
             img_name = name.split('/')[-1]
-            # print(img_name)
-            shutil.move(name, imgDir+img_name)
+            shutil.copy(name, imgDir+img_name)
         for name in label_list:
             label_name = name.split('/')[-1]
-            shutil.move(name,labeldir+label_name)      
-        return
+            shutil.copy(name,labeldir+label_name)
 
 if __name__ == '__main__':
-    label_dir = './exp/'
+    label_dir = './20230821/'
     # fileDir = "./car2/"    #原图片文件夹路径
-    imgDir = './car_type_axel_20230306/images/'    #移动到新的文件夹路径
-    labeldir = './car_type_axel_20230306/labels/' 
-    # if not os.path.exists(tarDir):
-    #     os.makedirs(tarDir)
+    imgDir = './images/'    #移动到新的文件夹路径
+    labeldir = './labels/' 
+    if not os.path.exists(imgDir):
+        os.makedirs(imgDir)
+    if not os.path.exists(labeldir):
+        os.makedirs(labeldir)
     moveFile(label_dir)
+    print("done!!!")
+    

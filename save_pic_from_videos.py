@@ -3,7 +3,7 @@
 import cv2
 import os
 
-directory_name = '2023-02-13-外出采集/'
+directory_name = '20230801/'
 
 for filename in os.listdir(directory_name):
     print('filename:', filename)
@@ -22,7 +22,7 @@ for filename in os.listdir(directory_name):
     print('帧数、宽度、高度分别为:',fps,width,height) # 帧率 宽 高
 
     i = 0 # 记录读取多少帧
-    frameFrequency = 10 # 每frameFrequency保存一张图片
+    frameFrequency = 25 # 每frameFrequency保存一张图片
     while(isOpened):
         # 结束标志是否读取到最后一帧
         if i == n_frame:
@@ -34,14 +34,14 @@ for filename in os.listdir(directory_name):
         # True表示读取成功 进行·写入
         # if 判断需要有冒号
         #if flag == True:
-        outPutDirName = './car/' # 设置保存路径
+        outPutDirName = './vehicle/' # 设置保存路径
         # 如果文件目录不存在则创建目录 
         if not os.path.exists(outPutDirName):
             os.makedirs(outPutDirName)
         if i % frameFrequency == 0:
             print(fileName)
             try:
-                cv2.imwrite(outPutDirName+fileName,frame,[cv2.IMWRITE_JPEG_QUALITY,100])# 质量控制 100最高
+                cv2.imwrite(outPutDirName+fileName, frame, [cv2.IMWRITE_JPEG_QUALITY, 100])# 质量控制 100最高
             except:
                 print("save photo failed!")
     cap.release()

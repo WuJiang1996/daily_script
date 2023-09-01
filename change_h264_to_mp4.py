@@ -2,7 +2,7 @@ import os
 from os import path
 #该脚本作用是通过ffpmeg把h264文件转换成mp4文件
 
-wdr = path.normpath(r'ref/')
+wdr = path.normpath(r'20230526/')
 videoList = os.listdir(wdr)
 #获取文件夹下所有文件列表
 

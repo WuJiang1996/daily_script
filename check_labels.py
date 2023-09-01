@@ -3,10 +3,10 @@ import cv2
 #该脚本作用是找到标签有问题的照片
 
 array_of_img = [] 
-directory_name = 'images/'
+directory_name = 'labels/'
 
 for filename in os.listdir(directory_name):
-    # print('filename:',filename)
+    #print('filename:',filename)
     if filename.endswith('txt'):
         array_of_img.append(filename)
 # print(array_of_img)
@@ -19,7 +19,9 @@ for name in array_of_img:
     for line in f:
         # print(type(line[0]))
         l = line.split(' ')[:-1]
-        print(l)
-        print(txt_path)
-        if int(l[0]) > 2:
+        # print(l)
+        # print(txt_path)
+        # if int(l[0]) >= 1:
+        #     print(txt_path)
+        if int(l[0]) != 0:
             print(txt_path)
