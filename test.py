@@ -315,6 +315,104 @@ from functools import reduce
 # if __name__ == "__main__":
 #     main()
 
+# class Person(object):
+
+#     def __init__(self, name, age):
+#         self._name = name
+#         self._age = age
+
+#     # 访问器 - getter方法
+#     @property
+#     def name(self):
+#         return self._name
+
+#     # 访问器 - getter方法
+#     @property
+#     def age(self):
+#         return self._age
+
+#     # 修改器 - setter方法
+#     @age.setter
+#     def age(self, age):
+#         self._age = age
+
+#     def play(self):
+#         if self._age <= 16:
+#             print('%s正在玩飞行棋.' % self._name)
+#         else:
+#             print('%s正在玩斗地主.' % self._name)
+
+
+# def main():
+#     person = Person('王大锤', 12)
+#     person.play()
+#     person.age = 22
+#     person.play()
+#     # person.name = '白元芳'  # AttributeError: can't set attribute
+
+
+# if __name__ == '__main__':
+#     main()
+
+# a = (1,2,3)    # tuple
+# b = (1,2,3)
+# print(id(a))
+# print(id(b))、
+
+# name = 'Chris'
+# 1. f stringsprint(f'Hello {name}')# 
+# 2. % operatorprint('Hey %s %s' % (name, name))# 
+# 3. formatprint( "My name is {}".format((name)))
+
+# def logging(func): 
+#     def log_function_called: 
+#         print(f'{func} called.') 
+#     func 
+#     return log_function_called
+
+# def my_name: 
+#     print('chris')
+#     def friends_name: 
+#         print('naruto')
+# my_name
+# friends_name#=> chris#=> naruto
+
+
+# class Car : 
+#     def __init__(self, color, speed): 
+#         self.color = color 
+#         self.speed = speed
+
+# car = Car('red','100mph')
+# car.speed#=> '100mph'
+# def func: 
+#     print('Im a function')
+# func
+# def add_three(x): 
+#     return x + 3
+# li = [1,2,3]
+# [i for i in map(add_three, li)]#=> [4, 5, 6]
+
+# name = 'chr'
+# def add_chars(s): 
+#     s += 'is' 
+#     print(s)
+
+# add_chars(name) 
+# print(name)#=> chris#=> chr
+
+# li = [1,2]
+# def add_element(seq): 
+#     seq.append(3) 
+#     print(seq)
+# add_element(li) 
+# print(li)#=> [1, 2, 3]#=> [1, 2, 3]
+
+
+# li3 = [['a'],['b'],['c']]
+# li4 = list(li3)
+# li3.append([4])
+# print(li4)#=> [['a'], ['b'], ['c']]     li3[0][0] = ['X']      print(li4)#=> [[['X']], ['b'], ['c']]
 
 
 
