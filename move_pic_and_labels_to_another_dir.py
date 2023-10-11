@@ -42,8 +42,7 @@ def moveFile(label_dir):
             shutil.copy(name,labeldir+label_name)
 
 if __name__ == '__main__':
-    label_dir = './20230821/'
-    # fileDir = "./car2/"    #原图片文件夹路径
+    label_dir = './20230925/'
     imgDir = './images/'    #移动到新的文件夹路径
     labeldir = './labels/' 
     if not os.path.exists(imgDir):
