@@ -3,7 +3,8 @@
 import cv2
 import os
 
-directory_name = '20230801/'
+directory_name = '思澜高速-20231023/'
+
 
 for filename in os.listdir(directory_name):
     print('filename:', filename)

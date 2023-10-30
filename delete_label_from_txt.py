@@ -1,6 +1,8 @@
 import os
 
-dir = './labels/'
+dir = './labels1/'
+if not os.path.exists(dir):
+    os.makedirs(dir)
 
 for filename in os.listdir(dir):
     # print(filename)
@@ -23,7 +25,7 @@ for filename in os.listdir(dir):
 
         #print("label_list:", label_list)
         with open(txt_path) as f:
-            outPutDirgzName = 'labels1'
+            outPutDirgzName = 'labels'
             outPutDirgzPath = outPutDirgzName 
             if not os.path.exists(outPutDirgzPath):
                 os.makedirs(outPutDirgzPath)
