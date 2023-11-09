@@ -21,28 +21,28 @@ img_list = []
 label_list = []
 
 def moveFile(label_dir):
-        for dirname in os.listdir(label_dir):    #取图片的原始路径
-            sec_path = label_dir + dirname + '/'
-            for imglabel_path in os.listdir(sec_path):
-                # print(type(imglabel_path))
-                if imglabel_path.endswith('.jpg'):
-                    img_path = sec_path + imglabel_path
-                    # print(img_path)
-                    img_list.append(img_path)
-                if imglabel_path.endswith('txt'):
-                    label_path = sec_path + imglabel_path
-                    # print(label_path)
-                    label_list.append(label_path)
+    for dirname in os.listdir(label_dir):    #取图片的原始路径
+        sec_path = label_dir + dirname + '/'
+        for imglabel_path in os.listdir(sec_path):
+            # print(type(imglabel_path))
+            if imglabel_path.endswith('.jpg'):
+                img_path = sec_path + imglabel_path
+                # print(img_path)
+                img_list.append(img_path)
+            if imglabel_path.endswith('txt'):
+                label_path = sec_path + imglabel_path
+                # print(label_path)
+                label_list.append(label_path)
 
-        for name in img_list:
-            img_name = name.split('/')[-1]
-            shutil.copy(name, imgDir+img_name)
-        for name in label_list:
-            label_name = name.split('/')[-1]
-            shutil.copy(name,labeldir+label_name)
+    for name in img_list:
+        img_name = name.split('/')[-1]
+        shutil.copy(name, imgDir+img_name)
+    for name in label_list:
+        label_name = name.split('/')[-1]
+        shutil.copy(name,labeldir+label_name)
 
 if __name__ == '__main__':
-    label_dir = './2023-10-18-广西都巴路误报-已完成/'
+    label_dir = './2023-10-27-广西都巴路误报-已完成/'
     imgDir = './images/'    #移动到新的文件夹路径
     labeldir = './labels/' 
     if not os.path.exists(imgDir):
