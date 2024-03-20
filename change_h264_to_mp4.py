@@ -2,7 +2,7 @@ import os
 from os import path
 #该脚本作用是通过ffpmeg把h264文件转换成mp4文件
 
-wdr = path.normpath(r'20230526/')
+wdr = path.normpath(r'20240102/')
 videoList = os.listdir(wdr)
 #获取文件夹下所有文件列表
 
@@ -13,8 +13,9 @@ videoList = os.listdir(wdr)
 # 12.使用ffpmpeg把h264转为MP4
 # ffmpeg -f h264 -i source.h264 -vcodec copy out.mp4
 
-# ffmpegCmd = 'ffmpeg -f h264 -i {} -vcodec copy {}_conv.mp4'
-ffmpegCmd = 'ffmpeg -i {} -codec copy -bsf: h264_mp4toannexb -f h264 {}.h264'
+ffmpegCmd = 'ffmpeg -f h264 -i {} -vcodec copy {}_conv.mp4'
+#ffmpegCmd = 'ffmpeg -i {} -codec copy -bsf: h264_mp4toannexb -f h264 {}.h264'
+#ffmpegCmd = 'ffmpeg -i {} -vcodec copy {}_conv.mp4'
 
 #设置ffmpeg命令模板
 cmd = f'cd "{wdr}"\n{path.splitdrive(wdr)[0]}\npause\n'
