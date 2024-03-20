@@ -1,15 +1,13 @@
 import os
 
-dir = './labels/'
+dir = './select1/'
 if not os.path.exists(dir):
     os.makedirs(dir)
 
 for filename in os.listdir(dir):
-    # print(filename)
     label_list = []
     txt_path = dir + filename
     if filename.endswith('txt'):
-        #print(txt_path)
         with open(txt_path) as f:
             context = f.readlines()
             length = len(context)
@@ -22,7 +20,6 @@ for filename in os.listdir(dir):
                     #     print("label is 5!!!!!!!!!")
                     #     print(txt_path)
                         # del context[i]
-
         #print("label_list:", label_list)
         with open(txt_path) as f:
             outPutDirgzName = 'labels1'
