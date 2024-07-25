@@ -1334,3 +1334,40 @@ from functools import reduce
 # }
 
 
+# import numpy as np 
+
+# a = np.array([0.0, 10.0, 20.0, 30.0])
+# b = np.array([1.0, 2.0, 3.0])
+# # print(a[:, np.newaxis] + b)
+# print(a[:, np.newaxis])
+
+
+
+# import torch
+# a = torch.randn(4)
+# print("a:",a)
+# min = torch.linspace(-1, 1, steps=4)
+# print("min:",min)
+# print(torch.clamp(a, min=min))
+
+
+# a=torch.randint(low=0,high=10,size=(10,1))
+# print(a)
+# a=torch.clamp(a,3,9)
+# print(a)
+
+
+import torch
+
+x = torch.randn(128, 20)  # 输入的维度是（128，20）
+m = torch.nn.Linear(20, 30)  # 20,30是指维度
+output = m(x)
+print('m.weight.shape:\n ', m.weight.shape)
+print('m.bias.shape:\n', m.bias.shape)
+print('output.shape:\n', output.shape)
+
+# ans = torch.mm(input,torch.t(m.weight))+m.bias 等价于下面的
+ans = torch.mm(x, m.weight.t()) + m.bias   
+print('ans.shape:\n', ans.shape)
+
+print(torch.equal(ans, output))

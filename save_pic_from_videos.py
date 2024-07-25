@@ -5,7 +5,6 @@ import os
 
 directory_name = '大理管理处-20231031/'
 
-
 for filename in os.listdir(directory_name):
     print('filename:', filename)
     video_path = directory_name + filename
@@ -32,8 +31,7 @@ for filename in os.listdir(directory_name):
             i = i+1
         (flag,frame) = cap.read() # read方法 读取每一张 flag是否读取成功 frame 读取内容
         fileName = str(filename.split('.')[0]) + '_' + str(i)+'.jpg' # 名字累加
-        # True表示读取成功 进行·写入
-        # if 判断需要有冒号
+        # True表示读取成功 进行·写入  if 判断需要有冒号
         #if flag == True:
         outPutDirName = './vehicle1/' # 设置保存路径
         # 如果文件目录不存在则创建目录 
